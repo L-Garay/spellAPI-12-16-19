@@ -2,8 +2,9 @@ import Spell from "./Models/Spell.js";
 
 let _state = {
   activeSpell: new Spell({ title: "Spell" }),
+  spells: [],
   /** @type {Spell[]} */
-  values: []
+  mySpells: []
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -11,7 +12,8 @@ let _state = {
  */
 let _listeners = {
   activeSpell: [],
-  spells: []
+  spells: [],
+  mySpells: []
 };
 
 //NOTE You should not need to change the code from this point down

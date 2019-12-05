@@ -15,6 +15,29 @@
   </head>
 
   <body>
+    <header class="container">
+      <div class="row">
+        <div class="col-12">Spells</div>
+      </div>
+    </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-3 spell-list">
+          Spells
+          <ol id="spells"></ol>
+        </div>
+        <div class="col-6">
+          Active
+          <div id="active"></div>
+        </div>
+        <div class="col-3">
+          MySpells
+          <div id="mine"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="app/main.js" type="module"></script>
   </body>
 </html>
