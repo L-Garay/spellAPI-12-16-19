@@ -12,14 +12,23 @@ function _drawSpells() {
   );
   document.getElementById("spells").innerHTML = template;
 }
-function _drawActive() {
-  let active = store.State.activeSpell;
-  document.getElementById("active").innerHTML = active.Template;
+async function _drawActive() {
+  if (store.State.activeSpell.id) {
+    try {
+      let active = store.State.activeSpell;
+      document.getElementById("active").innerHTML = active.Template;
+    } catch (e) {}
+  } else {
+    document.getElementById("active").innerHTML = "";
+  }
 }
 function _drawMySpells() {
   let mySpelltemplate = "";
   let mySpells = store.State.mySpells;
-  mySpells.forEach(s => (mySpelltemplate += `<li>${s.name}</li>`));
+  mySpells.forEach(
+    s =>
+      (mySpelltemplate += `<li onclick="app.spellsController.makeActive('${s.id}')">${s.name}</li>`)
+  );
   document.getElementById("mine").innerHTML = mySpelltemplate;
 }
 
@@ -46,5 +55,17 @@ export default class SpellsController {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  async removeSpellAsync(id) {
+    try {
+      await SpellsService.removeSpellAsync(id);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  makeActive(id) {
+    SpellsService.makeActive(id);
   }
 }

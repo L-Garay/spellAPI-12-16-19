@@ -9,3 +9,12 @@ main {
   max-height: 85vh;
   overflow-y: scroll;
 }
+
+.active-list {
+  max-height: 85vh;
+  overflow-y: scroll;
+}
+.my-list {
+  max-height: 85vh;
+  overflow-y: scroll;
+}
