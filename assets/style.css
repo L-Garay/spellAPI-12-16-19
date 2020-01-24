@@ -8,13 +8,16 @@ main {
 .spell-list {
   max-height: 85vh;
   overflow-y: scroll;
+  background-color: aquamarine;
 }
 
 .active-list {
   max-height: 85vh;
   overflow-y: scroll;
+  background-color: burlywood;
 }
 .my-list {
   max-height: 85vh;
   overflow-y: scroll;
+  background-color: chartreuse;
 }
